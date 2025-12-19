@@ -44,13 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Blog Loading Logic
     const blogContainer = document.getElementById('blog-container');
     if (blogContainer) {
         fetch('posts/posts.json')
             .then(response => response.json())
             .then(posts => {
-                blogContainer.innerHTML = ''; // Clear loading message
+                blogContainer.innerHTML = '';
                 posts.forEach(post => {
                     const postElement = document.createElement('article');
                     postElement.className = 'blog-post';
